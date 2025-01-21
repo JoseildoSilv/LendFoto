@@ -1,0 +1,48 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foto App</title>
+  <link href="styles.css" rel="stylesheet">
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-storage-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Foto App</h1>
+    </header>
+
+    <main>
+      <section id="camera-section">
+        <video id="camera" autoplay playsinline></video>
+        <canvas id="canvas" style="display:none"></canvas>
+        <div class="camera-controls">
+          <button id="capture-btn" class="btn">Tirar Foto</button>
+        </div>
+      </section>
+
+      <section id="gallery-section">
+        <h2>Histórico de Fotos</h2>
+        <div id="photo-gallery"></div>
+      </section>
+    </main>
+  </div>
+
+  <template id="photo-template">
+    <div class="photo-item">
+      <img class="photo-image">
+      <p class="photo-description"></p>
+      <div class="photo-actions">
+        <button class="share-btn btn">Compartilhar</button>
+        <button class="delete-btn btn">Excluir</button>
+      </div>
+    </div>
+  </template>
+
+  <script src="firebase-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
